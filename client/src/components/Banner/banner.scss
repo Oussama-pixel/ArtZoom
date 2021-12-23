@@ -1,6 +1,6 @@
 .banner{
     position: relative;
-    top: 190px;
+    top: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,51 +8,54 @@
     .image{
         img{
             height: 60vh;
+            width: 50vw;
+            object-fit: fill;
             border-radius: 20px;
-            object-fit: cover;
         }
         .swiper{
-            width: 80vh;
+            width: 50vw;
+            height: 54vh;
+            .swiper-button-prev,.swiper-button-next{
+                color: white;
+            }
         }
     }
     .text{
-        width: 50%;
+        width: 84vw;
         font-family: 'Bakbak One', cursive;
         .title{
-            font-family: 'Mr Dafoe';
+            font-family: 'Montserrat', sans-serif;            
             margin: 0;
             margin-top: -0.6em;
-            color: white;
-            text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
-            transform: rotate(-7deg);
-            font-size: 6rem;
-            font-weight: 500;
+            color: #FF9933;
+            //text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+            //transform: rotate(-7deg);
+            font-size: 4rem;
+            font-weight: 800;
         }
         .info{
-            color:rgb(42, 42, 42);
+            //color:rgb(42, 42, 42);
+            color: white;
             font-size: 2rem;
-            margin-top: 4rem;
+            margin-top: 1rem;
             .definition{
                 font-size: 25px;
                 width: 100%;
                 font-weight: 500;
                 margin: 0;
+                border: none;
+                font-family: inherit;
             }
             span{
                 font-size: 25px;
-                background: linear-gradient(to right,#ff70d7 10%, #ffa9c8 50%, #ffe2e2 60%);
-                background-size: auto auto;
-                background-size: 200% auto;
                 color: #fff;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                animation: textclip 1.5s linear infinite;
                 margin: 0;
-                text-decoration: underline;
-                color: #fff;
             }
             p{
+                border-top: #FF9933 2px solid;
+                font-family: 'Montserrat', sans-serif;
                 font-size: 1.9rem;
+                font-weight: 600;
                 width: 80%;
             }
         }
@@ -61,18 +64,18 @@
         display: flex;
         justify-content: flex-start;
         button{
-            height: 7vh;
+            height: 6vh;
             border: none;
             border-radius: 10px;
-            font-family: 'Mr Dafoe';
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
             font-size: 25px;
             cursor: pointer;
-            width: 140px;
-            transition: .5s ease-in-out;
+            width: 170px;
+            transition: .3s ease-in-out;
             &:hover{
-                background: linear-gradient(195deg, #fb3939, #fe8d8d, #ffe2e2);
-                color: #fff;
-                text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+                background-color: #FF9933;
+                color: white;
                 font-size: 25px;
             }
         }
@@ -107,8 +110,13 @@
                 }
             }
             .title{
-                font-size: 4rem !important;
+                font-size: 3rem !important;
             }
+                .banner{
+                    .text{
+                        width: 100% !important;
+                    }
+                }
         }
         @media (max-width:400px){
             .info{

@@ -8,6 +8,9 @@ export default function TopBar() {
     window.onscroll = ()=>{
         setIsScrolled(window.pageYOffset===0?false:true);
     }
+    const handleChooseLink = ()=>{
+        setClickedMenuBtn(false)
+    }
     return (
         <div className={`topbar ${isScrolled&&"scrolled"} ${clickedMenuBtn&&"clickedMenuBtn"}`}>
             <div className='logo'>
@@ -18,21 +21,21 @@ export default function TopBar() {
 
             <div className="navButtons">
                 <ul>
-                    <li>
-                        <Link to="/aboutUs">
+                    <Link to="/aboutUs" onClick={handleChooseLink}>
+                        <li>
                             À propos de nous
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/Services">
+                        </li>
+                    </Link>
+                    <Link to="/Services" onClick={handleChooseLink}>
+                        <li>
                             Services 
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="contactUs">
+                        </li>
+                    </Link>
+                    <Link to="contactUs" onClick={handleChooseLink}>
+                        <li>
                             Contactez Nous
-                        </Link>
-                    </li>
+                        </li>
+                    </Link>
                 </ul>
             </div>
             <div className="menuBtn" onClick={()=>setClickedMenuBtn(!clickedMenuBtn)}>

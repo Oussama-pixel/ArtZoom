@@ -3,9 +3,10 @@
     top: 0;
     left: 0;
     /*width: 100vw;*/
-    height: 100vh;
+    height: 120vh;
     width: 100%;
-    background: linear-gradient(195deg, #fae039, #febd8c, #ffe2e2)
+    //background: linear-gradient(210deg, #1D214E, #3a9cdd, #04D7A2)
+    background: conic-gradient(from 45deg at 50% 50%, #2e1771, #3e19cb, rgba(101,75,245,1))
 }
 main{
     -webkit-box-sizing: border-box;
@@ -15,7 +16,7 @@ main{
     display: flex;
 }
 
-@media  (max-width: 1567px) {
+@media  (max-width: 1667px) {
     .background{
         height: 170vh;
     }

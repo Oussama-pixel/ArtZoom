@@ -1,33 +1,279 @@
 .aboutus{
-    .topbar{
-        background-color: rgb(255, 242, 242);
+    //show image 
+    .showImg{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        overflow: hidden;
+        transition: .5s ease-in-out;
+        .backgroundShowImg{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #0b0b0b;
+            width: 100vw;
+            height: 100vh;
+            opacity: .8;
+        }
+        .img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            transition: .4s ease-in-out;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            span{
+                color: white;
+                font-size: 2rem;
+                cursor: pointer;
+                align-self: flex-start;
+                margin-top: 3%;
+                z-index: 1;
+            }
+            img{
+                position: absolute;
+                max-width: 100%;
+                max-height: 80%;
+                width: 55%;
+                height: auto;
+                top: 50%;     
+                left: 50%;
+                transform: translate( -50%, -50%);
+            }
+
+        }
     }
+    //scroll animation
+    .reveal{
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: 2s all ease;
+    }
+      .reveal.active{
+        transform: translateY(0);
+        opacity: 1;
+      }
+    //about us image
     .aboutUsImg{
         img{
             position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
             z-index: -1;
         }
     }
     .textForImg{
-        position: absolute;
+        position: relative;
+        //to resize when screen goes small
+        width: 99vw;
+        height: 100vh;
+        left: -8px;
+        top: 0vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100vw;
-        height: 100vh;
         background:linear-gradient(to bottom ,
         rgba(0,0,0,0) 0%,
         rgba(0,0,0,1) 100%);
         z-index: 10;
         p{
-            font-size: 17rem;
+            font-size: 7rem;
             font-family: 'Roboto', sans-serif;
-            color: white;
-            opacity: .2;
+            font-weight: 100;
+            color: rgb(251, 241, 241);
         }
+        .arrowDown{
+            position: absolute;
+            bottom: 0;
+            font-size: 2rem;
+            color: white;
+            animation-duration: 1s;
+            animation-name: upToDown;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            transition: .5s ease-in-out;
+        }
+    }
+    .arrowDown{
+        &.scrolled{
+                opacity: 0;
+        }
+    }
+
+    .products{
+        height: 100%;
+        width: 99%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(120deg, #f2f1f1, #f9f8f8, #ffffff);        
+        .productsText{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 70%;
+            h4{
+                font-weight: 200;
+                font-size: 2.5rem;
+            }   
+            p{
+                font-size: 1.5rem;
+                width: 75%;
+            }
+            border-bottom: rgb(53, 53, 53) 2px solid;
+            margin: 10px;
+            //clip-path: ellipse(60% 100% at 49.4% 0%);
+        }
+        .productImgs{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+
+            img{
+                width: 33%;
+                margin: 5px;
+                cursor: pointer;
+                transition: .3s ease-in-out;
+                &:hover{
+                    opacity: .5;
+                }
+            }
+        }
+        .productHistory{
+            width: 50%;
+            margin:30px 10px 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h2{
+                font-size: 3.9rem;
+                font-weight: 100;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+            }
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p{
+                    width: 50%;
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-size: 1.5rem;
+                    margin: 25px;
+                    font-weight: 100;
+                }
+
+            }
+        }
+        .productFooter{
+            position: relative;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100vw;
+            height: 55px;
+            background-color: rgb(243, 243, 243);
+            border-radius: 5px;
+            border-top: rgb(133, 133, 133) 2px solid;
+            a{
+                color: black;
+            }
+        }
+    }
+}
+@media (max-width: 1500px) {
+    .aboutus{
+        .textForImg{
+            width: 99vw;
+        }
+    }
+    @media (max-width:1100px){
+        .aboutus{
+            .textForImg{
+                width: 98.9vw !important;
+            }
+            .products{
+                width: 98%;
+                .productsText{
+                    text-align: center !important;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        @media (max-width:1000px){
+            .aboutus{
+                .textForImg{
+                    width: 98.5vw !important;
+                }
+            }
+            @media (max-width:800px){
+                .aboutus{
+                    .textForImg{
+                        width: 97.5vw !important;
+                    }
+                }
+            }
+                @media (max-width:550px){
+                    .aboutus{
+                        .products{
+                            width: 87% !important;
+                            .productsText{
+                                width: 60%;
+                                h4{
+                                    font-size: 1.5rem !important;
+                                    align-self: center;
+                                    width: 85vw;
+                                    margin-left: 31%;
+                                }
+                                p{
+                                    width: 100%;
+                                    font-size: 1.2rem !important;
+                                }
+                            }
+                            .productImgs{
+                                img{
+                                    width: 88%;
+                                }
+                            }
+                        }
+                        .textForImg{
+                            width: 99.9vw !important;
+                        }
+                        .showImg{
+                            .img{
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
+@keyframes upToDown{
+    from{
+        bottom: 0;
+        color: rgb(251, 241, 241);
+    }
+    to{
+        bottom: 10px;
+        color: rgb(251, 241, 241);
     }
 }

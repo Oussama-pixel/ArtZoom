@@ -11,17 +11,16 @@ export default function Banner() {
         <div className='banner'>
             <div className="text">
                 <div className="title">
-                    Entreprise d'industrie Publicitaire
+                    Société Leader dans la publicité industriele à Méknes.
                 </div>
                 <div className='info'>
                     <p className='definition'>
-                        Entreprise de Dévelopement des panaux publicitaire personalisé au Maroc.
                     </p>
                     <span>
-                        Panneaux Publicitaire + écrans LED + Néon.
+                        Habillage des facades fabrication des enseigns, la publicité numérique  ✨
                     </span>
                     <p>
-                    Nous créons une expérience publicitaire incroyable pour les startups, les petites et moyennes entreprises
+                    Nous créons une expérience publicitaire incroyable pour les startups, les petites et moyennes entreprises 🤗😀
                     </p>
                 </div>
             </div>
@@ -38,10 +37,11 @@ export default function Banner() {
             }}
             slideToClickedSlide={true}
             className="swiper">
-                    <SwiperSlide><img src="/images/products/image1.jpeg" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="/images/products/image2.jpeg" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="/images/products/image3.jpeg" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="/images/products/image4.jpeg" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="/images/products/image51.jpeg" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="/images/products/image50.jpeg" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="/images/products/image47.jpeg" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="/images/products/image41.jpeg" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="/images/products/image41.jpeg" alt="" /></SwiperSlide>
                 </Swiper>
                 <div className="savoirePlus">
                     <button>Savoire Plus</button>
