@@ -1,18 +1,47 @@
-.background{
+/*.background{
     position: absolute;
     top: 0;
     left: 0;
     /*width: 100vw;*/
-    height: 120vh;
-    width: 100%;
-    //background: linear-gradient(210deg, #1D214E, #3a9cdd, #04D7A2)
-    background: conic-gradient(from 45deg at 50% 50%, #2e1771, #3e19cb, rgba(101,75,245,1))
-}
+ //   height: 120vh;
+  //  width: 100%;
+    //background: linear-gradient(210deg, #1D214E, #3a9cdd, #04D7A2);
+    //background: conic-gradient(from 145deg at 50% 50%, #2e1771, #3e19cb, rgba(101,75,245,1));
+//    background: linear-gradient(45deg, #5658fa, #6277fd, rgba(110,147,255,1));    
+ //@at-root   background-size: 400% 400%;
+  //  animation: gradient 5s ease infinite;
+//}
+.bg {
+    z-index:-1;
+    height: 99vh;
+    img{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+  }
+  }
+  /*
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }*/
+  
 main{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
+    height: 100vh;
+    background-color: rgb(26,26,26);
+    position: absolute;
+    left: 0;
     display: flex;
 }
 
@@ -31,3 +60,22 @@ main{
         }
     }
 }
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
