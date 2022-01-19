@@ -9,8 +9,10 @@ import 'swiper/swiper-bundle.css';
 import { Link } from 'react-router-dom';
 import {RiServiceFill} from 'react-icons/ri'
 import {BsPencil, BsTelephone} from 'react-icons/bs'
-import {MdDone} from 'react-icons/md'
+import {MdDone, MdOutlineEmail} from 'react-icons/md'
 import { Map } from '../Map/Map';
+import {GiRotaryPhone} from 'react-icons/gi'
+import {MdOutlinePhonelinkRing} from 'react-icons/md'
 SwiperCore.use([Autoplay,Navigation, Pagination,EffectFade, Controller, Thumbs]);
 
 
@@ -76,7 +78,7 @@ export default function Banner() {
                                     </p>
                                 </div>
                                 <div className="services-content-savoire-plus">
-                                    <Link to="/services/adhesif">
+                                    <Link to="/service">
                                         <button>En Savoire +</button>
                                     </Link>
                                 </div>
@@ -256,7 +258,7 @@ export default function Banner() {
                                 </h4>
                                 <h4>
                                     <h4>
-                                        icon
+                                        <MdOutlinePhonelinkRing/>
                                     </h4>
                                     0640760574
                                 </h4>
@@ -267,7 +269,7 @@ export default function Banner() {
                                 </h4>
                                 <h4>
                                     <h4>
-                                        icon
+                                        <GiRotaryPhone/>
                                     </h4>
                                     0640760574
                                 </h4>
@@ -278,7 +280,7 @@ export default function Banner() {
                                 </h4>
                                 <h4>
                                     <h4>
-                                        icon
+                                        <MdOutlineEmail/>
                                     </h4>
                                     oussamaboujnan5@gmail.com
                                 </h4>
@@ -296,7 +298,7 @@ export default function Banner() {
                                 <input type="text" placeholder='Phone' />
                             </div>
                             <div className="row">
-                                <textarea name="" id="" cols="110" rows="25"></textarea>
+                                <textarea name="" id="" cols="110" rows="25" placeholder='votre message ici'></textarea>
                             </div>
                             <div className="row">
                                 <div className="envoyer">

@@ -445,8 +445,21 @@
             justify-content: space-evenly;
             align-items: center;
             color: white;
+            font-family: 'Monstreat', sans-serif;
+            .title{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             .info{
                 width: 40%;
+                .info-title{
+                    border-bottom: #999 2px solid;
+                    h1{
+                        margin-bottom: 2px;
+                    }
+                }
                 .info-content{
                     display: flex;
                     flex-direction: column;
@@ -454,10 +467,19 @@
                     .row{
                         display: flex;
                         justify-content: space-between;
+                        :nth-child(1){
+                            font-size: 22px;
+                            color: white;
+                        }
                         h4{
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
+                            font-size: 18px;
+                            svg{
+                                font-size: 22px;
+                                margin-right: 10px;
+                            }
                         }
                     }
                 }
@@ -473,7 +495,8 @@
                         justify-content: space-around;
                         align-items: center;
                         input{
-                            margin: 20px;
+                            margin: 20px 10px;
+                            width: 100%;
                             padding: 20px;
                         }
                     }
@@ -627,8 +650,42 @@
                 }
             }
         }
+        .nos-avantages{
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+            .avantage{
+                h1{
+                    font-size: 19px !important;
+                }
+            }
+        }
     }
     @media (max-width:950px) {
+        .banner{
+            .banner-content{
+                .nos-avantages{
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 80px 0;
+                    .avantage{
+                        padding: 100px 0;
+                        h1{
+                            font-size: 19px !important;
+                        }
+                    }
+                }
+                .qui-sommes-nous{
+                    .desc{
+                        video{
+                            width: 90%;
+                        }
+                        p{
+                            width: 90%; 
+                        }
+                    }
+                }
+            }
+        }
         .image{
             .swiper{
                 width: 97vw !important;

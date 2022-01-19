@@ -73,8 +73,8 @@ export default function Footer() {
                     <p>Horaires</p>
                 </div>
                 <div className="horaires-jours">
-                    {jours.map(item=>(
-                        <div className="horaires-jour">
+                    {jours.map((item,index)=>(
+                        <div className="horaires-jour" key={index}>
                             <span className='horaires-jour-titre'>{item}</span>
                             <span className="horaires-jour-heurs">
                                 {item==="Samedi"?"09h > 14h":item==="Dimanche"?"Fermé":"09h > 17h"}
