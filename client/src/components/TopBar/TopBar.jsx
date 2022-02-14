@@ -21,6 +21,11 @@ export default function TopBar() {
 
             <div className="navButtons">
                 <ul>
+                    <Link to="/" onClick={handleChooseLink}>
+                        <li>
+                            Acceuil
+                        </li>
+                    </Link>
                     <Link to="/aboutUs" onClick={handleChooseLink}>
                         <li>
                             À propos de nous

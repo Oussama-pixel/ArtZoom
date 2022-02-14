@@ -6,20 +6,19 @@ import ServiceDescription from './Single_Service_Description/ServiceDescription'
 export default function Service({type}) {
     const [showDesc, setShowDesc] = useState(false)
     return (
-        <div className='single-service'>
+        <div className={`single-service ${showDesc?'serv-desc':''}`}>
             <div className="single-service-content">
                 <div className="single-service-banner">
                     <img src="/images/products/image63.jpeg" alt="" />
                     <h1>Adhesif publicitaire</h1>
                 </div>
+                {showDesc?<ServiceDescription element={<span>Catégorie : <span  className='categ' onClick={()=>setShowDesc(false)}>Lettrage</span></span>}/>:(
                 <div className="content">
-                    {showDesc?<ServiceDescription element={<span>Catégorie : <span  className='categ' onClick={()=>setShowDesc(false)}>Lettrage</span></span>}/>:(
-                    <>
                     <div className="products">
                         <h1>
                             Produits
                         </h1>
-                        <div className="product-element">
+                        <div className="product-element selected">
                             <img src="/images/products/image64.jpeg" alt="" className="logo" />
                             <h3 className="name">
                                 Signelatique
@@ -49,7 +48,7 @@ export default function Service({type}) {
                         </div>
                     </div>
                     <div className="service">
-                        <p>panneaux publicitaires, vous propose le lettrage adhésif complexe ou le lettrage adhésif simple sur mesure avec un large choix de couleurs et de rendu. Disponibles partout au Maroc ainsi qu’a l’étranger.</p>
+                        <p className='description-service'>Art Zoom, vous propose le lettrage adhésif complexe ou le lettrage adhésif simple sur mesure avec un large choix de couleurs et de rendu. Disponibles partout au Maroc ainsi qu’a l’étranger.</p>
                         <div className="resultat-trouve">
                             <span>9 resultat trouvé</span>
                             <select defaultValue={"tri-popularite"} name="tri" id="">
@@ -134,8 +133,8 @@ export default function Service({type}) {
                             
                         </div>
                     </div>
-                    </>)}
                 </div>
+                )}
             </div>
             <Footer/>
         </div>

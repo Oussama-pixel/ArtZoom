@@ -19,7 +19,6 @@ SwiperCore.use([Autoplay,Navigation, Pagination,EffectFade, Controller, Thumbs])
 export default function Banner() {
     const inViewport = (entries, observer) => {
         entries.forEach(entry => {
-            console.log(entry.target.classList);
           entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
         });
       };
@@ -57,7 +56,7 @@ export default function Banner() {
                     <div className="title" data-inviewport="show-title">
                         <h1>Nos Services</h1>
                         <RiServiceFill className='title-icon'/>
-                    </div>
+                    </div>  
                     <div className="nos-services-content">
                         <div className="home-page-service marquage"  data-inviewport="show-service">
                             <div className="service-image">
@@ -104,7 +103,9 @@ export default function Banner() {
                                     </p>
                                 </div>
                                 <div className="services-content-savoire-plus">
-                                    <button>En Savoire +</button>
+                                    <Link to="/service">
+                                        <button>En Savoire +</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +128,9 @@ export default function Banner() {
                                         </p>
                                     </div>
                                     <div className="services-content-savoire-plus">
-                                        <button>En Savoire +</button>
+                                        <Link to="/service">
+                                            <button>En Savoire +</button>
+                                        </Link>
                                     </div>
                                 </div>
                         </div>
@@ -150,7 +153,9 @@ export default function Banner() {
                                         </p>
                                     </div>
                                     <div className="services-content-savoire-plus">
-                                        <button>En Savoire +</button>
+                                        <Link to="/service">
+                                            <button>En Savoire +</button>
+                                        </Link>
                                     </div>
                                 </div>
                         </div>

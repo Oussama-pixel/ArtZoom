@@ -3,8 +3,10 @@ import "./contactUs.scss"
 export default function ContactUs() {
     return (
         <div className='contactUs'>
-            <div className="contactUsImage">
-                <img src="/images/contactUs.jpeg" alt="" />
+            <div className="contact-us-background">
+
+            </div>
+            <div className="contact-us-arrow">
             </div>
         </div>
     )

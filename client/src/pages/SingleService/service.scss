@@ -1,27 +1,30 @@
 .single-service{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    margin-left: -20px;
     z-index: 99;
-    margin-bottom: 930px;
+    margin-bottom: 130vh;
     background-color: #f1f1f1;
-    position: relative;
-    left: -20px;
+    &.serv-desc{
+        margin-bottom: 150vh !important;
+    }
     .single-service-content{
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: stretch;
         position: relative;
         left: 0;
         top: 0;
         height: 100vh;
         width: 100vw;
-        margin-top: 600px;
         z-index: 99;
         .single-service-banner {
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 100px;
+            margin-bottom: 150px;
             height: 100%;
             width: 100%;
             h1{
@@ -40,18 +43,20 @@
         }
         .content{
             display: flex;
-            margin-top: 220px;
             align-items: flex-start;
             justify-content: center;
-            height: 200vh;
+            flex-wrap: wrap;
+            height: 100%;
             width: 100%;
             z-index: 99;
             background-color: #f1f1f1;
             padding-top: 50px;
             .products{
-                width: 50%;
+                width: 100%;
                 display: flex;
-                flex-direction: column;
+                flex-wrap: wrap;
+                border-bottom: #ff7519 2px solid;
+                padding-bottom: 3vh;
                 h1{
                     padding-left: 100px;
                     font-family: 'Oswald', sans-serif;
@@ -65,16 +70,20 @@
                     margin-left: 80px;
                     margin-bottom: 10px;
                     color: rgb(56, 54, 54);
-                    width: 50%;
+                    width: auto;
                     border-bottom: #ccc 1px solid;
                     transition: .4s ease-in-out;
                     cursor: pointer;
-                    &:hover{
+                    &:hover,&.selected{
                         box-shadow: 0px 2px 4px rgb(109, 109, 109);
                         border-bottom: none;
                         svg{
                             opacity: 1;
                         }
+                    }
+                    &.selected{
+                        box-shadow: 0px 3px 4px #ffa970;
+
                     }
                     h3{
                         font-size: 17px;
@@ -94,7 +103,6 @@
             }
             .service{
                 font-family: 'Roboto',sans-serif;
-                padding-right: 100px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -103,11 +111,18 @@
                     font-size: 1.1rem;
                     margin-bottom: 20px;
                 }
+                .description-service{
+                    padding: 20px;
+                    width: 80%;
+                    font-weight: 300;
+                    font-size: 1.5rem;
+
+                }
                 .resultat-trouve{
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    width: 100%;
+                    width: 90%;
                     select{
                         height: 50px;
                         background-color: rgb(241, 241, 241);
@@ -126,6 +141,8 @@
                     align-items: center;
                     justify-content: space-evenly;
                     flex-wrap: wrap;
+                    background-color: #f1f1f1;
+                    margin-bottom: 20%;
                     .element{
                         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
                         display: flex;
@@ -134,8 +151,8 @@
                         justify-content: center;
                         padding: 20px 10px;
                         position: relative;
-                        margin-bottom: 20px;
-                        margin-top: 20px;
+                        margin: 20px 50px ;
+                        background-color: #f1f1f1;
                         p{
                             font-size: 16px;
                             color: #555;
@@ -186,9 +203,90 @@
 
 @media (max-width:1500px){
     .single-service{
-        margin-bottom: 90% !important;
+        margin-bottom: 432vh !important;
         .single-service-content{
-            margin-top: 70%;
+            .content{
+                background-color: #f1f1f1;
+                .elements{
+                    background-color: #f1f1f1;
+                    z-index: 99;
+                    width: 100%;
+                }
+            }
+            .service{
+                padding: 0 !important;
+                .resultat-trouve{
+                    width: 90% !important;
+                }
+            }
+        }
+    }
+    @media (max-width:1200px){
+        .single-service{
+            margin-left: -6px !important;
+            &.serv-desc{
+                margin-bottom: 200vh !important;
+            }
+            .single-service-content{
+                width: 101.5%;
+                .single-service-banner{
+                    margin-bottom: 135px !important;
+                }
+                .content{
+                    .products{
+                        width: 90%;
+                        flex-direction: column;
+                        h1{
+                            padding: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .product-element{
+                            width: 100%;
+                            margin-left: 0;
+                        }
+                    }
+                }
+                .service{
+                    padding: 0 !important;
+                    height: 98% !important;
+                    >p{
+                        margin: 10px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+        @media (max-width:550px){
+            .single-service{
+                margin-bottom: 500vh !important;
+                width: 101%;
+                margin-left: -5px !important;
+                .single-service-content{
+                    .single-service-banner{
+                        margin: 0;
+                        margin-bottom: -8px !important;
+                        margin-top: -11px;
+                        h1{
+                            margin-bottom: 0;
+                        }
+                    }
+                    .content{
+                        padding-top: 0;
+                        width: 100vw !important;
+                        margin-left: -3px !important;
+                    }
+                }
+            }
+            @media(max-width:400px){
+                .single-service{
+                    .single-service-content{
+                        height: 132vh;
+
+                    }
+                }
+            }
         }
     }
 }

@@ -57,7 +57,7 @@
             }
             .address{
                 .info-icon{
-                    width: 30px;
+                    width: 21px;
                 }
             }
             .info-icon{
@@ -174,61 +174,109 @@
         justify-content: space-evenly;
         align-items: center;
         z-index: 1;
-        width: 100%;
+        width: 103%;
+        overflow: hidden;
         position: fixed;
         bottom: 0;
         border-top: #7f7f7f 1px solid;
         color: #7f7f7f;
+        background-color: #171717 !important;
         a{
             color: white;
+            position: relative;
+        }
+        .copyright{
+            flex-direction: column;
         }
     }
-@media (max-width:450px){
-    .productFooter{
-        flex-direction: column;
-        position: relative;
-        height: 100%;
-        width: 100vw;
-        margin-left: -8px;
-        overflow: hidden;
+    
+    @media (max-width:1200px){
+        .productFooter{
+            flex-direction: column;
+            height: 98vh;
+            margin-bottom: -5vh;
+            justify-content: space-evenly;  
         .ste-info{
-            padding: 0 !important;
+            margin-top: 10vh;
             width: 100%;
-            height: 400px;
-            .ste-info-contact-info,.ste-info-desc{
-                margin: 0 20px;
-            }
+            padding: 20px;
+            margin-bottom: 0;
+            padding-bottom: 0;
             .ste-info-contact-info{
                 .address{
                     .info-icon{
-                        width: 40px;
-                        height: 30px;
+                        font-size: 1rem !important;
                     }
-                }
-                .info-icon{
-                    height: 30px;
                 }
             }
         }
         .sitemap{
             width: 100%;
-            height: 300px;
-            padding: 0 !important;
+            
         }
         .horaires{
             width: 100%;
-            padding: 0 !important;
+            margin-bottom: 29%;
             .horaires-jours{
-                margin: 7px;
-                margin-top: 20px;
+                .horaires-jour{
+                    margin: 5px;
+                }
             }
         }
     }
-    .copyright{
-        position: relative;
-        background-color: #171717 !important;
-        width: 100vw;
-        margin-left: -8px;
-        flex-direction: column;
+    @media (max-width:500px){
+        .productFooter{
+            height: 137vh;
+            .ste-info{
+                margin-top: 38vh;
+                margin-bottom: -9%;
+                .ste-info-contact-info{
+                    .address{
+                        .info-icon{
+                            width: 38px !important;
+                        }
+                    }
+                }
+                .ste-info-titre{
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+            .sitemap{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-bottom: -5vh;
+                margin-top: 1vh;
+                padding-bottom: 0;
+                .ste-info-titre{
+                    p{
+                        margin: 0;
+                    }
+                }
+                .sitemap-links{
+                    .sitemap-link{
+                        margin: 1px !important;
+                        a{
+                            p{
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .horaires{
+                margin-bottom: 25%;
+                .horaires-jours{
+                    height: 70%;
+                }
+                .ste-info-titre{
+                    p{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
     }
 }

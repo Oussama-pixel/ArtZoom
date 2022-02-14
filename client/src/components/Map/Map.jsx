@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 const Google_Maps_Key = "AIzaSyDHzvRNBGx_hm7hGkRaYXMhL1Yn93_kaJg";
 export class Map extends Component {
   static defaultProps = {
@@ -20,11 +19,7 @@ export class Map extends Component {
           defaultCenter={this.props.center}
           defaultZoom={16}
         >
-        <AnyReactComponent
-            lat={this.props.center.lat}
-            lng={this.props.center.lng}
-            text="ArtZoom"
-        />
+          <button>hello</button>
 
         </GoogleMapReact>
       </div>
