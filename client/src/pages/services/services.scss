@@ -46,7 +46,6 @@
         flex-direction: column;
         justify-content: space-evenly;
         width: 100%;
-        margin-bottom: 500px;
         z-index: 4;
         position: relative;
         background-color: white;
@@ -159,6 +158,6 @@
 }
 @media (max-width:500px){
     .content{
-        margin-bottom: 100px !important;
+        margin-bottom: 900px !important;
     }
 }

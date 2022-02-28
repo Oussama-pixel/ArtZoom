@@ -3,10 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0vh;
     background-color: #f1f1f1;
-    margin-top: 8vh;
-    padding-top: 10vh;
+    z-index: 99;
     .service-informations{
         .info-wrapper{
             display: flex;
@@ -14,6 +12,7 @@
             justify-content: center;
             flex-direction: column;
             margin: 40px;
+            margin-top: 20%;
             .information{
                 display: flex;
                 flex-direction: column;
@@ -156,7 +155,28 @@
                 .elements{
                     .swiper{
                         .element{
-                            
+                            margin-left: 23px; 
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width:400px){
+            .service-desc{
+                width: 101vw;
+                padding-top: 0px;
+                .service-informations{
+                    .info-wrapper{
+                        .image{
+                            img{
+                                width: 79vw;
+                            }
+                        }
+                    }
+                    .description{
+                        .desc-text{
+                            margin-right: 0;
+                            margin-left: 0;
                         }
                     }
                 }

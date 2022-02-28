@@ -107,9 +107,12 @@
     .topbar{
         justify-content: start;
         flex-direction: column;
+        &.clickedMenuBtn{
+            height: 450px !important;
+        }
         .logo{
             img{
-                margin-bottom: 10px;
+                margin-bottom: 16%;
             }
         }
         .navButtons{
@@ -129,12 +132,11 @@
     }
     @media (max-width:450px){
      .topbar{
-         height: 62px;
          .logo{
              img{
+                 margin-bottom: 35%;
                  height: 50px;
                  margin-top: 14px;
-                 margin-bottom: 13px;
              }
          }
      }       

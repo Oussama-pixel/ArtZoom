@@ -1,10 +1,6 @@
 .banner{
     position: relative;
     top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     height: 100%;
     background-color: transparent;
     .banner-content{
@@ -488,7 +484,7 @@
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-                width: 100%;
+                flex-wrap: wrap;
                 .form-content{
                     .row{
                         display: flex;
@@ -506,8 +502,9 @@
                     align-items: center;
                     justify-content: center;
                     align-self: center;
-                    width: 40%;
+                    width: 90vw;
                     height: 100%;
+                    margin-bottom: 10px;
                 }
             }
         }
@@ -646,7 +643,6 @@
                 align-items: center;
                 .map{
                     align-self: center !important;
-                    width: 100% !important;
                 }
             }
         }
@@ -710,19 +706,89 @@
                 }
             }
         }
-        @media (max-width:450px){
-            .image{
-                .swiper{
-                    width: 94vw !important;
-                    height:50vh !important;
+        @media (max-width:550px){
+            .banner{
+                top: 140px;
+                .firstImage{
+                    top: -91%;
+                    .slogan{
+                        height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        .info{
+                            display: none;
+                        }
+                    }
                 }
-                img{
-                    height: 50vh !important;
+                .image{
+                    .swiper{
+                        width: 94vw !important;
+                        height:50vh !important;
+                    }
+                    img{
+                        height: 50vh !important;
+                    }
                 }
-            }
-            .info{
-                p{
-                    font-size: 1.5rem !important;
+                .banner-content{
+                    .nos-services{
+                        .nos-services-content{
+                            flex-direction: column;
+                            .home-page-service{
+                                width: 95% !important;
+                                .service-content{
+                                    .service-content-title{
+                                        h1{
+                                            font-size: 26px;
+                                        }
+                                        p{
+                                            font-size: 18px;
+                                            margin-top: 5px;
+                                        }
+                                    }
+                                    .service-content-description{
+                                        p{
+                                            font-size: 15px;
+                                        }
+                                    }
+                                    .services-content-savoire-plus{
+                                        margin-top: 0;
+                                        button{
+                                            height: 40px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .qui-sommes-nous{
+                        .desc p{
+                            width: 95% !important;
+                        }
+                        .desc video{
+                            width: 100%;
+                        }
+                    }
+                    .nous-contacter{
+                        .info{
+                            width: 100vw;
+                            .info-content{
+                                .row{
+                                    flex-direction: column;
+                                }
+                            }
+                            }
+                            p{
+                                font-size: 1.5rem !important;
+                            }
+                            .form-content{
+                                .row{
+                                    textarea{
+                                        width: 90vw !important;
+                                    }
+                                }
+                            }
+                    }
                 }
             }
         }

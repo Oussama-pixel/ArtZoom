@@ -18,7 +18,7 @@ export default function Footer() {
                     </p> 
                 </div>
                 <div className="ste-info-desc">
-                Fabricant de panneaux publicitaire, d’enseignes lumineuses Leds ou néon et de signalétique à Marrakech, et sa région (Safi, Benguerir, Essaouira,  Youssofia, Chichaoua, Kelaa des sraghna, Ait ourir, et Ouarzazate), M&N Publicité installe vos enseignes dans toute le Maroc.
+                Fabricant de panneaux publicitaire, d’enseignes lumineuses Leds ou néon et de signalétique à Meknes, et sa région, Art Zoom installe vos enseignes dans toute le Maroc.
                 </div>
                 <div className="ste-info-contact-info">
                     <div className="address">

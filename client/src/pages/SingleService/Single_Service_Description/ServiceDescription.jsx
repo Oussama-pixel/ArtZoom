@@ -9,7 +9,6 @@ export default function ServiceDescription({element}) {
     })
     const [service, setService] = useState("");
     const handle_service_change =e=>{
-        console.log(e.target.name);
         setService(service+e.target.name);
     }
     return (
@@ -46,7 +45,7 @@ export default function ServiceDescription({element}) {
                     </div>
                     <div className="elements">
                             <Swiper 
-                            slidesPerView={4}
+                            slidesPerView={window.innerWidth>500?window.innerWidth>900?4:2:1}
                             direction={'horizontal'}
                             centeredSlidesBounds
                             spaceBetween={150}
