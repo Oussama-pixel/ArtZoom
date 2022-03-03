@@ -29,16 +29,13 @@ export default function ContactUs() {
                         </div>
                         <div className="desc">
                             <p>
-                                Si vous avez des questions ou des questions, un membre du personnel sera toujours heureux de vous aider. N'hésitez pas à nous contacter par téléphone ou par email et nous ne manquerons pas de vous répondre dans les plus brefs délais.
+                                Si vous avez des questions ou des questions, un membre du personnel sera toujours heureux de vous aider. <br/> <br/> N'hésitez pas à nous contacter par téléphone ou par email et nous ne manquerons pas de vous répondre dans les plus brefs délais.
                             </p>
                         </div>
                     </div>
                     <div className="image">
                         <img src="/images/products/image55.jpeg" alt="" />
                     </div>
-                </div>
-                <div className="map">
-                    <Map/>
                 </div>
                 <div className="contacts">
                     <div className="title">
@@ -47,9 +44,6 @@ export default function ContactUs() {
                         </h1>
                     </div>
                     <div className="info">
-                        <p>
-                            Si vous avez des questions ou des questions, un membre du personnel sera toujours heureux de vous aider. N'hésitez pas à nous contacter par téléphone, fax ou e-mail et nous ne manquerons pas de vous répondre en conséquence.
-                        </p>
                         <p>
                             <strong>Nous sommes ouverts:</strong>
                         </p>
@@ -121,6 +115,9 @@ export default function ContactUs() {
                             </button>
                         </div>
                     </div>
+                </div>
+                <div className="map">
+                    <Map/>
                 </div>
             </div>
         </div>
