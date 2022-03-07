@@ -26,7 +26,7 @@ export default function ContactUs() {
                     <div className="info">
                         <div className="title">
                             <h1>
-                                {window.screen.width>500 && "Avez vous des questions? <br></br>"}Contactez Nous!
+                                {window.screen.width>500 && "Avez vous des questions?"} {window.screen.width>500&&<br></br>}Contactez Nous!
                             </h1>
                         </div>
                         <div className="desc">
