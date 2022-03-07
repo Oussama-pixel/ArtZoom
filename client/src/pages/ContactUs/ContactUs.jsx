@@ -8,15 +8,17 @@ export default function ContactUs() {
     },[])
     return (
         <div className='contactUs'>
-            <div className="background">
-                <div className="contact-us-arrow-one">
+            <div className="contact-us-background">
+                <div className="arrows-wrapper">
+                    <div className="contact-us-arrow-one">
 
-                </div>
-                <div className="contact-us-arrow-two">
+                    </div>
+                    <div className="contact-us-arrow-two">
 
-                </div>
-                <div className="contact-us-arrow-three">
-                    
+                    </div>
+                    <div className="contact-us-arrow-three">
+
+                    </div>
                 </div>
             </div>
             <div className="content">
@@ -24,7 +26,7 @@ export default function ContactUs() {
                     <div className="info">
                         <div className="title">
                             <h1>
-                                Avez vous des questions? <br></br>Contactez Nous!
+                                {window.screen.width>500 && "Avez vous des questions? <br></br>"}Contactez Nous!
                             </h1>
                         </div>
                         <div className="desc">
@@ -37,13 +39,7 @@ export default function ContactUs() {
                         <img src="/images/products/image55.jpeg" alt="" />
                     </div>
                 </div>
-                <div className="contacts">
-                    <div className="title">
-                        <h1>
-                            CONTACT
-                        </h1>
-                    </div>
-                    <div className="info">
+                <div className="horaires-wrapper">
                         <p>
                             <strong>Nous sommes ouverts:</strong>
                         </p>
@@ -60,6 +56,14 @@ export default function ContactUs() {
                                 Le <u>Samedi</u> du 09:00 à 14:00 
                             </p>
                         </div>
+                </div>
+                <div className="contacts">
+                    <div className="title">
+                        <h1>
+                            CONTACT
+                        </h1>
+                    </div>
+                    <div className="info">
 
                         <div className="email-and-phone">
                             <div className="left">

@@ -1,49 +1,50 @@
 .contactUs{
     display: flex;
     flex-direction: column;
-    .background{
-        .contact-us-arrow-one{
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 2'%3E%3Cpath opacity='0.15' d='M0 0v2L1 1z' fill='url(%23g)'/%3E%3ClinearGradient id='g' x1='0' x2='1' y1='1' y2='0'%3E%3Cstop offset='0%' stop-color='%230084b4'/%3E%3Cstop offset='100%' stop-color='%2352babb'/%3E%3C/linearGradient%3E%3C/svg%3E") no-repeat;
-            width: 100%;
-            height: 150vh;
-            position: absolute;
-            top: 500px;
-            left: 0;
-        
-        }
-        .contact-us-arrow-two{
-            /*&::after{
-                content: ' ';
-                border-top: 500px solid #52babb;
-                border-left: 30vw solid transparent;
-                border-right: 30vw solid transparent;
+    .contact-us-background{
+        .arrows-wrapper{
+            .contact-us-arrow-one{
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 2'%3E%3Cpath opacity='0.15' d='M0 0v2L1 1z' fill='url(%23g)'/%3E%3ClinearGradient id='g' x1='0' x2='1' y1='1' y2='0'%3E%3Cstop offset='0%' stop-color='%230084b4'/%3E%3Cstop offset='100%' stop-color='%2352babb'/%3E%3C/linearGradient%3E%3C/svg%3E") no-repeat;
+                width: 90vw;
+                height: 150vh;
                 position: absolute;
-                right: 0;
-                top: 80px;
+                top: 500px;
+                left: 0;
                 z-index: -1;
-                opacity: .5;
-            }*/
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 2'%3E%3Cpath opacity='0.15' d='M0 0v2L1 1z' fill='url(%23g)'/%3E%3ClinearGradient id='g' x1='0' x2='1' y1='1' y2='0'%3E%3Cstop offset='0%' stop-color='%230084b4'/%3E%3Cstop offset='100%' stop-color='%2352babb'/%3E%3C/linearGradient%3E%3C/svg%3E") no-repeat;
-            width: 100vw;
-            height: 150vh;
-            position: absolute;
-            rotate: 180deg;
-            top: 150%;
-            right: 0%;
-            overflow: hidden;
-        
-        }
-        .contact-us-arrow-three{
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 2'%3E%3Cpath opacity='0.15' d='M0 0v2L1 1z' fill='url(%23g)'/%3E%3ClinearGradient id='g' x1='0' x2='1' y1='1' y2='0'%3E%3Cstop offset='0%' stop-color='%230084b4'/%3E%3Cstop offset='100%' stop-color='%2352babb'/%3E%3C/linearGradient%3E%3C/svg%3E") no-repeat;
-            width: 100vw;
-            height: 150vh;
-            position: absolute;
-            rotate: 180deg;
-            top: -20%;
-            right: 0%;
-            z-index: -1;
-            overflow: hidden;
-        
+            }
+            .contact-us-arrow-two{
+                /*&::after{
+                    content: ' ';
+                    border-top: 500px solid #52babb;
+                    border-left: 30vw solid transparent;
+                    border-right: 30vw solid transparent;
+                    position: absolute;
+                    right: 0;
+                    top: 80px;
+                    z-index: -1;
+                    opacity: .5;
+                }*/
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 2'%3E%3Cpath opacity='0.15' d='M0 0v2L1 1z' fill='url(%23g)'/%3E%3ClinearGradient id='g' x1='0' x2='1' y1='1' y2='0'%3E%3Cstop offset='0%' stop-color='%230084b4'/%3E%3Cstop offset='100%' stop-color='%2352babb'/%3E%3C/linearGradient%3E%3C/svg%3E") no-repeat;
+                width: 80%;
+                height: 150vh;
+                position: absolute;
+                transform: rotate(180deg);
+                top: 100vh;
+                right: 0%;
+                overflow: hidden;  
+                z-index: -1;     
+            }
+            .contact-us-arrow-three{
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 2'%3E%3Cpath opacity='0.15' d='M0 0v2L1 1z' fill='url(%23g)'/%3E%3ClinearGradient id='g' x1='0' x2='1' y1='1' y2='0'%3E%3Cstop offset='0%' stop-color='%230084b4'/%3E%3Cstop offset='100%' stop-color='%2352babb'/%3E%3C/linearGradient%3E%3C/svg%3E") no-repeat;
+                position: absolute;
+                rotate: 180deg;
+                top: 180%;
+                left: 0%;
+                overflow: hidden;
+                z-index: -1;
+                width: 80%;
+                height: 150vh;
+            }
         }
     }
     .content{
@@ -85,7 +86,7 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    z-index: -1;
+                    z-index: -4;
                     
                 }
             }
@@ -100,10 +101,32 @@
                 width: 55% !important;
             }
         }
+        .horaires-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5%;
+            >p{
+                font-size: 35px;
+                font-family: "Oswald", sans-serif;
+            }
+            .horaires{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgb(27, 23, 23);
+                border-bottom: 1px #44c1c5 solid;
+                font-family: "Oswald", sans-serif;
+                font-size: 22px;
+                width: 50%;
+            }
+        }
         .contacts{
             display: flex;
             align-items: flex-start;
             justify-content: space-evenly;
+            flex-wrap: wrap;
             padding-top: 80px;
             .title{
                 width: 70%;
@@ -118,19 +141,13 @@
                 }
             }
             .info{
-                height: 100%;
-                width: 100%;
                 font-family: "Oswald", sans-serif;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
                 font-size: 20px;
-                .horaires{
-                    display: flex;
-                    color: rgb(27, 23, 23);
-                    border-bottom: 1px #44c1c5 solid;
-                    width: 50%;
-                }
                 .email-and-phone{
                     display: flex;
                     width: 80%;
@@ -150,6 +167,7 @@
             display: flex;
             flex-direction: column;
             z-index: 1;
+            width: 80%;
             .title{
                 width: 37.5%;
                 display: flex;
@@ -163,11 +181,16 @@
                 }
             }
             .form{
-                width: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                background-color: transparent;
+                // border-top-right-radius: 5%;
+                // border-bottom-left-radius: 5%;
+                // border: #5fbdb5 1px solid;
+                padding: 10px;
+                margin-left: 80px;
                 .row{
                     input,textarea{
                         border: none;
@@ -202,6 +225,74 @@
                             color: #242222;
                             svg{
                                 color: #5fbdb5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:900px){
+    .contactUs{
+        .contact-us-background{
+            .image-3{
+                img{
+                    width: 30vw;
+                }
+            }
+        }
+        .content{
+            .header{
+                .info{
+                    width: 90%;
+                }
+            }
+            .contacts{
+                .info{
+                    .email-and-phone{
+                        div{
+                            margin: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:500px){
+        .contactUs{
+            .content{
+                margin-bottom: 0 !important;
+                .header{
+                    .info{
+                        .desc{
+                            margin-top: 20%;
+                            p{
+                                margin: 0 3%;
+                            }
+                        }
+                    }
+                }
+                .contacts{
+                    .info{
+                        .email-and-phone{
+                            flex-wrap: wrap;
+                            div{
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+                .send-email{
+                    .title{
+                        width: 100%;
+                        align-items: center;
+                    }
+                    .form{
+                        margin-left: 0;
+                        .row{
+                            textarea{
+                                width: 100%;
                             }
                         }
                     }
