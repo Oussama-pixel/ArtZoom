@@ -2,10 +2,15 @@ import React, { useEffect } from 'react'
 import "./contactUs.scss"
 import {Map} from '../../components/Map/Map.jsx'
 import {AiOutlineSend} from 'react-icons/ai'
+import { useDispatch, useSelector } from 'react-redux'
+import { get_file_action } from '../../state/actions/FilesAction'
 export default function ContactUs() {
+    const dispatch = useDispatch();
+    const files = useSelector(state=>state.files)
     useEffect(()=>{
         window.scrollTo(0,0)
-    },[])
+        dispatch(get_file_action("products","contactez-nous"))
+    },[dispatch])
     return (
         <div className='contactUs'>
             <div className="contact-us-background">
@@ -36,7 +41,7 @@ export default function ContactUs() {
                         </div>
                     </div>
                     <div className="image">
-                        <img src="/images/products/image55.jpeg" alt="" />
+                        <img src={files.files&&files.files[0].image} alt="" />
                     </div>
                 </div>
                 <div className="horaires-wrapper">

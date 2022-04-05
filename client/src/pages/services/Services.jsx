@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom'
 import "./services.scss"
 import {AiOutlineCheckSquare} from 'react-icons/ai'
 import Footer from '../../components/footer/Footer'
+import { useDispatch, useSelector } from 'react-redux'
+import { get_file_action } from '../../state/actions/FilesAction'
 export default function Services() {
+    const dispatch = useDispatch();
+    const files = useSelector(state=>state.files);
+    
     useEffect(()=>{
         window.scrollTo(0,0)
-    },[])
+        dispatch(get_file_action("products","services"))
+    },[dispatch])
+
     return (
         <div className='services'>
             <div className="backgroundImg">
                 <div className="backgroundShadow"></div>
-                <img src="/images/products/image56.jpeg" alt="" />
+                <img src={files.files&&files.files[0].image} alt="" />
                 <div className="banner">
                     <h1>NOS SERVICES</h1>
                 </div>
@@ -25,7 +32,7 @@ export default function Services() {
                 <div className="types">
                     <div className="type">
                         <div className="typeImg">
-                            <img src="/images/products/image48.jpeg" alt="" />
+                            <img src={files.files&&files.files[1].image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -36,13 +43,13 @@ export default function Services() {
                                 <p>L’enseigne publicitaire est le meilleur moyen d’attirer l’attention à votre entreprise.</p>
                             </div>
                             <div className="learnMore">
-                                <Link to="/services?service=service">EN SAVOIRE PLUS</Link>
+                                <Link to="/service" state={{type:"enseigne"}}>EN SAVOIRE PLUS</Link>
                             </div>
                         </div>
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src="/images/products/image53.jpeg" alt="" />
+                            <img src={files.files&&files.files[2].image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -53,13 +60,13 @@ export default function Services() {
                                 <p>une forme très prisée des enseignes publicitaires, il est utilisé pour attirer l’attention du client , l’orienter et faire reconnaître votre marque ou un produit.</p>
                             </div>
                             <div className="learnMore">
-                                <Link to="/services?service=service">EN SAVOIRE PLUS</Link>
+                                <Link to="/service"state={{type:"totem"}}>EN SAVOIRE PLUS</Link>
                             </div>
                         </div>
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src="/images/products/image57.jpeg" alt="" />
+                            <img src={files.files&&files.files[3].image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -70,13 +77,13 @@ export default function Services() {
                                 <p>la signalétique est un élément majeur de la communication publicitaire. Les clients ont besoins d’être orientés guidés afin d’arriver à l’emplacement exacte de l’entreprise</p>
                             </div>
                             <div className="learnMore">
-                                <Link to="/services?service=service">EN SAVOIRE PLUS</Link>
+                                <Link to="/service" state={{type:"signelatique"}}>EN SAVOIRE PLUS</Link>
                             </div>
                         </div>
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src="/images/products/image15.jpeg" alt="" />
+                            <img src={files.files&&files.files[4].image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -87,13 +94,13 @@ export default function Services() {
                                 <p>Représentant un support de communication efficace adaptable pouvant être utilisés sur murs, sols, véhicules ,vitrines..</p>
                             </div>
                             <div className="learnMore">
-                                <Link to="/services?service=service">EN SAVOIRE PLUS</Link>
+                                <Link to="/service" state={{type:"adhesif"}}>EN SAVOIRE PLUS</Link>
                             </div>
                         </div>
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src="/images/products/image58.jpeg" alt="" />
+                            <img src={files.files&&files.files[5].image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -104,13 +111,13 @@ export default function Services() {
                                 <p>Représentant un support de communication efficace adaptable pouvant être utilisés sur murs, sols, véhicules ,vitrines..</p>
                             </div>
                             <div className="learnMore">
-                                <Link to="/services?service=service">EN SAVOIRE PLUS</Link>
+                                <Link to="/service" state={{type:"ecrans"}}>EN SAVOIRE PLUS</Link>
                             </div>
                         </div>
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src="/images/products/image59.jpeg" alt="" />
+                            <img src={files.files&&files.files[6]&&files.files[6].image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -120,9 +127,9 @@ export default function Services() {
                             <div className="description">
                                 <p>Représentant un support de communication efficace adaptable pouvant être utilisés sur murs, sols, véhicules ,vitrines..</p>
                             </div>
-                            <div className="learnMore">
-                                <Link to="/services?service=service">EN SAVOIRE PLUS</Link>
-                            </div>
+{/* {                            <div className="learnMore">
+                                <Link to="">EN SAVOIRE PLUS</Link>
+                            </div>} */}
                         </div>
                     </div>
                 </div>

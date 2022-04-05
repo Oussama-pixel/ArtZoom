@@ -2,20 +2,28 @@ import React, { useEffect, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaChevronDown } from 'react-icons/fa'
 import Footer from '../../components/footer/Footer'
+import { useDispatch, useSelector } from 'react-redux'
+
 import "./aboutUs.scss"
+import { get_file_action } from '../../state/actions/FilesAction'
 
 export default function AboutUs() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [index, setIndex] = useState(-6);
     const [showImg, setShowImg] = useState(false);
     const [imgToShow, setImgToShow] = useState("");
+    const files = useSelector(state=>state.files);
+    const dispatch = useDispatch();
+
     window.addEventListener("scroll",()=>{
         setIsScrolled(window.scrollY===0?false:true);
         reveal();
     })
+
     useEffect(()=>{
         window.scrollTo(0,0)
-    },[])
+        dispatch(get_file_action("products","about-us"))
+    },[dispatch])
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
         for (var i = 0; i < reveals.length; i++) {
@@ -68,7 +76,7 @@ export default function AboutUs() {
                 }
                     <>
                         <div className="aboutUsImg">
-                            <img src={`/images/products/image44.jpeg `} alt="" />
+                            <img src={files.files&&files.files[0].image} alt="" />
                         </div>
                         <div className="textForImg">
                             <p onClick={handleImages}>
@@ -87,14 +95,13 @@ export default function AboutUs() {
                                 </p> 
                             </div>
                             <div className="productImgs">
-                                <img src="/images/products/image41.jpeg" alt="" onClick={()=>handleShowImg("/images/products/image41.jpeg" )}/>
-                                <img src="/images/products/image47.jpeg" alt="" onClick={()=>handleShowImg("/images/products/image47.jpeg" )}/>
-                                <img src="/images/products/image48.jpeg" alt="" onClick={()=>handleShowImg("/images/products/image48.jpeg" )}/>
-                                <img src="/images/products/image49.jpeg" alt="" onClick={()=>handleShowImg("/images/products/image49.jpeg" )}/>
-                                <img src="/images/products/image50.jpeg" alt="" onClick={()=>handleShowImg("/images/products/image50.jpeg" )}/>
-                                <img src="/images/products/image51.jpeg" alt="" onClick={()=>handleShowImg("/images/products/image51.jpeg" )}/>
-                                <img src="/images/products/image52.jpeg" alt="" onClick={()=>handleShowImg("/images/products/image52.jpeg" )}/>
-                                <img src="/images/products/image53.jpeg" alt="" onClick={()=>handleShowImg("/images/products/image53.jpeg" )}/>
+                                {
+                                    files.files&&(
+                                        files.files.filter(item=>!item.name.includes("art")).map(item=>(
+                                            <img src={item.image} alt="" onClick={()=>handleShowImg(item.image)}/>
+                                        ))
+                                    )
+                                }
                             </div>
                             <div className="productHistory reveal">
                                 <h2>Qui Sommes nous?</h2>

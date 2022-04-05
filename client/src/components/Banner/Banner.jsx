@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./banner.scss"
 import {AiOutlineQuestion, AiOutlineWhatsApp} from 'react-icons/ai'
 import {IoConstructSharp} from 'react-icons/io5'
@@ -7,16 +7,21 @@ import {FaPlus} from 'react-icons/fa'
 import SwiperCore, { Autoplay,Navigation, Pagination, EffectFade ,Controller, Thumbs } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import {RiServiceFill} from 'react-icons/ri'
 import {BsPencil, BsTelephone} from 'react-icons/bs'
 import {MdDone, MdOutlineEmail} from 'react-icons/md'
 import { Map } from '../Map/Map';
 import {GiRotaryPhone} from 'react-icons/gi'
 import {MdOutlinePhonelinkRing} from 'react-icons/md'
+import { get_file_action } from '../../state/actions/FilesAction';
 SwiperCore.use([Autoplay,Navigation, Pagination,EffectFade, Controller, Thumbs]);
 
 
 export default function Banner() {
+    const linkRef = useRef();
+    const files = useSelector(stt=>stt.files);
+    const dispatch = useDispatch();
     const inViewport = (entries, observer) => {
         entries.forEach(entry => {
           entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
@@ -30,7 +35,8 @@ export default function Banner() {
         ELs_inViewport.forEach(EL => {
           Obs.observe(EL, obsOptions);
         });
-      },[])
+        dispatch(get_file_action("products","home"))
+      },[dispatch])
 
     return (
         <div className='banner'>
@@ -58,9 +64,9 @@ export default function Banner() {
                         <RiServiceFill className='title-icon'/>
                     </div>  
                     <div className="nos-services-content">
-                        <div className="home-page-service marquage"  data-inviewport="show-service">
+                        <div className="home-page-service marquage"onClick={()=>linkRef.current.click()}  data-inviewport="show-service">
                             <div className="service-image">
-                                <img src="images/products/image15.jpeg" alt="" />
+                                <img src={files.files&&files.files[1].image} alt="" />
                                 <div className="service-icon">
                                     <FaPlus/>
                                 </div>
@@ -77,15 +83,15 @@ export default function Banner() {
                                     </p>
                                 </div>
                                 <div className="services-content-savoire-plus">
-                                    <Link to="/service">
+                                    <Link to="/service"state={{type:"adhesif"}} ref={ref=>ref!==null&&(linkRef.current=ref)}>
                                         <button>En Savoire +</button>
                                     </Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="home-page-service enseigne "  data-inviewport="show-service">
+                        <div className="home-page-service enseigne "onClick={()=>linkRef.current.click()}  data-inviewport="show-service">
                             <div className="service-image">
-                                <img src="images/products/image54.jpeg" alt="" />
+                                <img src={files.files&&files.files[2].image} alt="" />
                                 <div className="service-icon">
                                     <FaPlus/>
                                 </div>
@@ -103,15 +109,15 @@ export default function Banner() {
                                     </p>
                                 </div>
                                 <div className="services-content-savoire-plus">
-                                    <Link to="/service">
+                                    <Link to="/service" state={{type:"enseign"}}>
                                         <button>En Savoire +</button>
                                     </Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="home-page-service signaletique "  data-inviewport="show-service">
+                        <div className="home-page-service signaletique " onClick={()=>linkRef.current.click()} data-inviewport="show-service">
                                 <div className="service-image">
-                                    <img src="images/products/image61.jpeg" alt="" />
+                                    <img src={files.files&&files.files[3].image} alt="" />
                                     <div className="service-icon">
                                         <FaPlus/>
                                     </div>
@@ -134,9 +140,9 @@ export default function Banner() {
                                     </div>
                                 </div>
                         </div>
-                        <div className="home-page-service LED "  data-inviewport="show-service">
+                        <div className="home-page-service LED " onClick={()=>linkRef.current.click()} data-inviewport="show-service">
                                 <div className="service-image">
-                                    <img src="images/products/image62.jpeg" alt="" />
+                                    <img src={files.files&&files.files[4].image} alt="" />
                                     <div className="service-icon">
                                         <FaPlus/>
                                     </div>
@@ -206,9 +212,7 @@ export default function Banner() {
                         </h1>
                     </div>
                     <div className="desc">
-                        <video controls >
-                            <source src='/videos/IMG_2344.MOV' type='video/mp4' />
-                        </video>
+                        <video controls src={files.files&&files.files[5].image} />
                         <p>
                             Fabricant de panneaux publicitaire, d’enseignes lumineuses LEDs ou néon et de signalétique à <b>Meknes</b>, ArtZoom est une socieété d'habillage des facades commercials Et enseigns publicitaire basée au  <b>26 BIS rue Ibn Khaldoun Ville nouvelle Meknes .</b> 
                         </p>
@@ -238,11 +242,7 @@ export default function Banner() {
                         }}
                         slideToClickedSlide={true}
                         className="swiper">
-                            <SwiperSlide><img src="/images/products/image51.jpeg" alt="" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/products/image50.jpeg" alt="" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/products/image47.jpeg" alt="" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/products/image41.jpeg" alt="" /></SwiperSlide>
-                            <SwiperSlide><img src="/images/products/image54.jpeg" alt="" /></SwiperSlide>
+                            {files.files&&files.files.filter(item=>item.name.includes("dernier-projects")).map(item=><SwiperSlide><img src={item.image} alt="" /></SwiperSlide>)}
                         </Swiper>
                     </div>
                 </div>
