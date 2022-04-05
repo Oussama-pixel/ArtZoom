@@ -29,6 +29,6 @@ export class Map extends Component {
           </div>
         </GoogleMapReact>
       </div>
-    );
+    ); 
   }
 }
