@@ -18,7 +18,7 @@ export default function Services() {
         <div className='services'>
             <div className="backgroundImg">
                 <div className="backgroundShadow"></div>
-                <img src={files.files&&files.files[0].image} alt="" />
+                <img src={files?.files?.at(0)?.image} alt="" />
                 <div className="banner">
                     <h1>NOS SERVICES</h1>
                 </div>
@@ -32,7 +32,7 @@ export default function Services() {
                 <div className="types">
                     <div className="type">
                         <div className="typeImg">
-                            <img src={files.files&&files.files[1].image} alt="" />
+                            <img src={files?.files?.at(1)?.image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -49,7 +49,7 @@ export default function Services() {
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src={files.files&&files.files[2].image} alt="" />
+                            <img src={files?.files?.at(2)?.image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -66,7 +66,7 @@ export default function Services() {
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src={files.files&&files.files[3].image} alt="" />
+                            <img src={files?.files?.at(3)?.image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -83,7 +83,7 @@ export default function Services() {
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src={files.files&&files.files[4].image} alt="" />
+                            <img src={files?.files?.at(4)?.image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -100,7 +100,7 @@ export default function Services() {
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src={files.files&&files.files[5].image} alt="" />
+                            <img src={files?.files?.at(5)?.image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">
@@ -117,7 +117,7 @@ export default function Services() {
                     </div>
                     <div className="type">
                         <div className="typeImg">
-                            <img src={files.files&&files.files[6]&&files.files[6].image} alt="" />
+                            <img src={files?.files?.at(6)?.image} alt="" />
                         </div>
                         <div className="legende">
                             <div className="title">

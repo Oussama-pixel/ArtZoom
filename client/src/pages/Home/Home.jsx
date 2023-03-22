@@ -10,7 +10,7 @@ export default function Home() {
     useEffect(()=>{
         window.scrollTo(0,0)
         dispatch(get_file_action("products","home"))
-    },[])
+    },[dispatch])
     return (
         <>
             <div class="bg">

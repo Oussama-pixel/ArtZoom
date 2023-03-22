@@ -41,7 +41,7 @@ export default function ContactUs() {
                         </div>
                     </div>
                     <div className="image">
-                        <img src={files.files&&files.files[0].image} alt="" />
+                        <img src={files?.files?.at(0)?.image} alt="" />
                     </div>
                 </div>
                 <div className="horaires-wrapper">

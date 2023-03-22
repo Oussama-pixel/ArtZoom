@@ -15,11 +15,12 @@ export default function Service() {
     console.log(files);
     useEffect(()=>{
         location&&location.state&&
-        dispatch(get_file_action("services","service-"+location.state.type));
+        dispatch(get_file_action("services","service-"+location.state?.type));
         console.log(selectRef.current)
     },[dispatch, location])
     
     const handleTypeChange = name=>{
+        window.scrollTo(0,0)
         selectRef.current.map(item=>{
             if(item.name===name){
                 item.classList.add("selected")
@@ -31,7 +32,7 @@ export default function Service() {
 
         location.state.type = name;
         selectRef.current.length>0&&selectRef.current.map(item=>{
-            console.log(name,item.innerText);
+            console.log(name,item?.innerText);
             if(item.innerText.toLowerCase().replace("é","e").includes(name)){
                 item.classList.add("selected"); 
             }
@@ -45,8 +46,8 @@ export default function Service() {
         <div className={`single-service ${showDesc?'serv-desc':''}`}>
             <div className="single-service-content">
                 <div className="single-service-banner">
-                    <img src={files.files&&files.files[0].image} alt="" />
-                    <h1>{files.files&&files.files[0]&&files.files[0].service&&files.files[0].service.toString()[0].toUpperCase()+files.files[0].service.slice(1) +" Publicitaire"}</h1>
+                    <img src={files?.files?.at(0)?.image} alt="" />
+                    <h1>{files?.files?.at(0)?.page?.toString()[0].toUpperCase()+files?.files?.at(0)?.page?.slice(1) +" Publicitaire"}</h1>
                 </div>
                 {showDesc?<ServiceDescription element={<span>Catégorie : <span  className='categ' onClick={()=>setShowDesc(false)}>Lettrage</span></span>}/>:(
                 <div className="content">
@@ -93,7 +94,7 @@ export default function Service() {
                     <div className="service">
                         <p className='description-service'>{files.files&&files.files[0].description}</p>
                         <div className="resultat-trouve">
-                            <span>{files.files&&files.files.filter(item=>!item.name.includes("banner")).length} resultat trouvé</span>
+                            <span>{files?.files?.filter(item=>!item?.name?.includes("banner"))?.length} resultat trouvé</span>
                             <select defaultValue={"tri-popularite"} name="tri" id="">
                                     <option value="tri-recent">
                                         Tri du plus récent du plus ancien
@@ -110,11 +111,11 @@ export default function Service() {
                             </select>
                         </div>
                         <div className="elements">
-                            {files.files&&files.files.filter(item=>!item.name.includes("banner")).map((item,index)=>(
+                            {files?.files?.filter(item=>!item?.name?.includes("banner")).map((item,index)=>(
                                 <div className="element" key={index}>
                                     <div>
-                                        <img src={item.image} alt="" />
-                                        <p className="desc">{item.name}</p>
+                                        <img src={item?.image} alt="" />
+                                        <p className="desc">{item?.name}</p>
                                     </div>
                                     <div className='lire-la-suite'>
                                     </div>

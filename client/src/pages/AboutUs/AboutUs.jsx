@@ -63,7 +63,6 @@ export default function AboutUs() {
     }
     return (
         <>
-
             <div className='aboutus'>
                 {showImg&&
                     <div className='showImg'>
@@ -74,9 +73,9 @@ export default function AboutUs() {
                         </div>
                     </div>
                 }
-                    <>
+                <>
                         <div className="aboutUsImg">
-                            <img src={files.files&&files.files[0].image} alt="" />
+                            <img src={files.files?.at(0)?.image} alt="" />
                         </div>
                         <div className="textForImg">
                             <p onClick={handleImages}>
@@ -97,8 +96,8 @@ export default function AboutUs() {
                             <div className="productImgs">
                                 {
                                     files.files&&(
-                                        files.files.filter(item=>!item.name.includes("art")).map(item=>(
-                                            <img src={item.image} alt="" onClick={()=>handleShowImg(item.image)}/>
+                                        files.files?.filter(item=>!item?.name.includes("art")).map(item=>(
+                                            <img src={item?.image} alt="" onClick={()=>handleShowImg(item?.image)}/>
                                         ))
                                     )
                                 }
@@ -118,8 +117,8 @@ export default function AboutUs() {
                                 </div>     
                             </div>
                         </div>
-                    </>
-                    <Footer/>
+                </>
+                <Footer/>
             </div>
         </>
     )

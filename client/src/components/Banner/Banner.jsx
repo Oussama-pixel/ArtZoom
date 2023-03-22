@@ -66,7 +66,7 @@ export default function Banner() {
                     <div className="nos-services-content">
                         <div className="home-page-service marquage"onClick={()=>linkRef.current.click()}  data-inviewport="show-service">
                             <div className="service-image">
-                                <img src={files.files&&files.files[1].image} alt="" />
+                                <img src={files.files?.at(1)?.image} alt="" />
                                 <div className="service-icon">
                                     <FaPlus/>
                                 </div>
@@ -89,9 +89,34 @@ export default function Banner() {
                                 </div>
                             </div>
                         </div>
+                        <div className="home-page-service LED " onClick={()=>linkRef.current.click()} data-inviewport="show-service">
+                                <div className="service-image">
+                                    <img src={files?.files?.at(4)?.image} alt="" />
+                                    <div className="service-icon">
+                                        <FaPlus/>
+                                    </div>
+                                </div>
+                                <div className="service-content">
+                                    <div className="service-content-title">
+                                        <h1>Les Écrans LED</h1>
+                                        <p>Écrans et signalétique LED pour entreprises</p>
+
+                                    </div>
+                                    <div className="service-content-description">
+                                        <p>
+                                        Représentant un support de communication efficace adaptable pouvant être utilisés sur murs, sols, véhicules ,vitrines..
+                                        </p>
+                                    </div>
+                                    <div className="services-content-savoire-plus">
+                                        <Link to="/service">
+                                            <button>En Savoire +</button>
+                                        </Link>
+                                    </div>
+                                </div>
+                        </div>
                         <div className="home-page-service enseigne "onClick={()=>linkRef.current.click()}  data-inviewport="show-service">
                             <div className="service-image">
-                                <img src={files.files&&files.files[2].image} alt="" />
+                                <img src={files?.files?.at(2)?.image} alt="" />
                                 <div className="service-icon">
                                     <FaPlus/>
                                 </div>
@@ -117,7 +142,7 @@ export default function Banner() {
                         </div>
                         <div className="home-page-service signaletique " onClick={()=>linkRef.current.click()} data-inviewport="show-service">
                                 <div className="service-image">
-                                    <img src={files.files&&files.files[3].image} alt="" />
+                                    <img src={files?.files?.at(3)?.image} alt="" />
                                     <div className="service-icon">
                                         <FaPlus/>
                                     </div>
@@ -131,31 +156,6 @@ export default function Banner() {
                                     <div className="service-content-description">
                                         <p>
                                             Panneau Plexi / Alu / PVC, Structure 4x3, Pré-enseigne, Totem personnalisé int./ext., Signalétique adhésive, Caisson, Chevalet de trottoir, Plaques professionnelles...                         
-                                        </p>
-                                    </div>
-                                    <div className="services-content-savoire-plus">
-                                        <Link to="/service">
-                                            <button>En Savoire +</button>
-                                        </Link>
-                                    </div>
-                                </div>
-                        </div>
-                        <div className="home-page-service LED " onClick={()=>linkRef.current.click()} data-inviewport="show-service">
-                                <div className="service-image">
-                                    <img src={files.files&&files.files[4].image} alt="" />
-                                    <div className="service-icon">
-                                        <FaPlus/>
-                                    </div>
-                                </div>
-                                <div className="service-content">
-                                    <div className="service-content-title">
-                                        <h1>Les Écrans LED</h1>
-                                        <p>Écrans et signalétique LED pour entreprises</p>
-
-                                    </div>
-                                    <div className="service-content-description">
-                                        <p>
-                                        Représentant un support de communication efficace adaptable pouvant être utilisés sur murs, sols, véhicules ,vitrines..
                                         </p>
                                     </div>
                                     <div className="services-content-savoire-plus">
@@ -212,7 +212,7 @@ export default function Banner() {
                         </h1>
                     </div>
                     <div className="desc">
-                        <video controls src={files.files&&files.files[5].image} />
+                        <video controls src={files?.files?.at(5)?.image} />
                         <p>
                             Fabricant de panneaux publicitaire, d’enseignes lumineuses LEDs ou néon et de signalétique à <b>Meknes</b>, ArtZoom est une socieété d'habillage des facades commercials Et enseigns publicitaire basée au  <b>26 BIS rue Ibn Khaldoun Ville nouvelle Meknes .</b> 
                         </p>
@@ -242,7 +242,7 @@ export default function Banner() {
                         }}
                         slideToClickedSlide={true}
                         className="swiper">
-                            {files.files&&files.files.filter(item=>item.name.includes("dernier-projects")).map(item=><SwiperSlide><img src={item.image} alt="" /></SwiperSlide>)}
+                            {files?.files?.filter(item=>item?.name?.includes("dernier-projects"))?.map(item=><SwiperSlide><img src={item?.image} alt="" /></SwiperSlide>)}
                         </Swiper>
                     </div>
                 </div>

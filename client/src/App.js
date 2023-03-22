@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Login from "./admin/login/Login";
 import AdminPage from "./admin/adminPage/AdminPage";
+import "./app.scss"
 
 function App() {
   return (
