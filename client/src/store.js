@@ -6,7 +6,8 @@ import { fileReducer } from './state/reducers/FilesReducer';
 const initialState = {
     files:{},
     upload_files:{},
-    admin:{},
+    admin:JSON.parse(sessionStorage.getItem("admin"))?{data:JSON.parse(sessionStorage.getItem("admin"))}:{admin:{}},
+
 }
 
 const reducer = combineReducers({

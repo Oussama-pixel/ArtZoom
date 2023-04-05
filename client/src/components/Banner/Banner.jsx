@@ -22,6 +22,7 @@ export default function Banner() {
     const linkRef = useRef();
     const files = useSelector(stt=>stt.files);
     const dispatch = useDispatch();
+    
     const inViewport = (entries, observer) => {
         entries.forEach(entry => {
           entry.target.classList.toggle("is-inViewport", entry.isIntersecting);

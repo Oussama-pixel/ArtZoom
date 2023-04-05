@@ -15,6 +15,7 @@ export default function Login() {
     }
     useEffect(()=>{
         if(admin.data){
+            sessionStorage.setItem("admin",JSON.stringify(admin.data))
             linkRef.current.click()
         }
     })

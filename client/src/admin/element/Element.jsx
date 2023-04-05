@@ -6,22 +6,23 @@ import "./element.scss"
 export default function Element({type,item}) {
     const [name, setName] = useState(item.name)
     const [description, setDescription] = useState(new DOMParser().parseFromString(item.description,"text/html").body.innerText)
-    const [image, setImage] = useState(item.image)
+    const [image, setImage] = useState()
     const admin = useSelector(state=>state.admin);
     const dispatch = useDispatch();
 
     const changeImg = (e)=>{
-        let src = URL.createObjectURL(e.target.files[0]);
-        setImage(src)
+        imageRef.current.src = URL.createObjectURL(e.target.files[0]);
+        setImage(e.target.files[0])
     }
 
+    console.log(image)
     const update_data = ()=>{
         let data = new FormData();
         
         data.append("picture",image)
         data.append("name",name)
         data.append("description",description)
-        data.append("types",item.image.includes("MOV")||item.image.includes("mp4")?["mov","mp4"]:["jpg","jpeg","png"])
+        data.append("types",image.name.includes("MOV")||image.name.includes("mp4")?["mov","mp4"]:["jpg","jpeg","png"])
         data.append("type",type.includes("service-")?'services':"products")
         data.append("table",type.includes("service-")?'services':"products");
         data.append("id",item.id)
@@ -36,9 +37,9 @@ export default function Element({type,item}) {
             <input type="file" name="new-file" accept='image/* ,video/*' onChange={e=>changeImg(e)} ref={ref=>ref!==null&&(fileInputRef.current = ref)} style={{display:"none"}} id="" />
             <div className="image" onClick={()=>fileInputRef.current.click()}>
                 {item.image.includes("MOV")||item.image.includes("mp4")?(
-                    <video src={image} controls ref={ref=>ref!==null&&(imageRef.current=ref)}></video>
+                    <video src={item.image} controls ref={ref=>ref!==null&&(imageRef.current=ref)}></video>
                 ):(
-                    <img src={image} alt="" ref={ref=>ref!==null&&(imageRef.current=ref)}/>
+                    <img src={item.image} alt="" ref={ref=>ref!==null&&(imageRef.current=ref)}/>
                 )}
             </div>
             <div className="info">
